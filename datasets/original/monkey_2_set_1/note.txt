@@ -1,0 +1,7 @@
+Note:
+
+Joystick control: Sessions 10,11,18,21
+
+Brain control + JS: Sessions 12,13,19,20
+
+Brain control with no JS: 15,16,17,24
