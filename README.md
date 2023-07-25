@@ -21,9 +21,21 @@ This code is stable using Python 3.9.4, Tensorflow 2.13.0
 pip install -r requirements.txt
 ```
 
+### Overview of this repository:
+1) [Datasets](https://github.com/aayushmanghosh/RL-Algorithms-for-iBMI-Applications/tree/main/datasets) contains three separate folders: (a) derived-RL-expt, (b) original, (c) synthetic noise. Derived-RL-expt contains the input feature datasets to *BanditronRP-RRAM-data.py* and *RL-decoders-iBMI.py*. Original contains the publicly available dataset. Synthetic noise also contain the input feature dataset but here additional noise is added to the spike count. Refer to the original publication for more information.
 
+2) [plots-and-figures](https://github.com/aayushmanghosh/RL-Algorithms-for-iBMI-Applications/tree/main/plots-and-figures) contains two separate folders: (a) functions (b) publication-specific-scripts. Functions stores the source code to generate publication specific graphs. Publication-specific-scripts stores the matlab scripts actually used to generate the graphs used in our paper with all the required edits.
 
+3) [source-codes](https://github.com/aayushmanghosh/RL-Algorithms-for-iBMI-Applications/tree/main/source-codes) contains MATLAB file for generating the required derived-RL-expt and synthetic noise datasets. *'spike_count.m'* generates the derived-RL-expt dataset. It counts the number of neuron spikes occuring in a backward looking window. *'syn_dataset.m'* generates the synthetic noise datasets. It works based on the Isekevich model to generate the noisy dataset.
 
+4) [BanditronRP-RRAM-data.py](https://github.com/aayushmanghosh/RL-Algorithms-for-iBMI-Applications/blob/main/BanditronRP-RRAM-data.py) lists the BanditronRP algorithm where the weights of the internal layer is modified based on the experimental data obtained from RRAM implementation. 
 
+5) [RL-decoders-iBMI.py](https://github.com/aayushmanghosh/RL-Algorithms-for-iBMI-Applications/blob/main/RL-decoders-iBMI.py) stores all the RL-algorithms used as a decoder for iBMI applications. Refer to the original publication for more information.
 
+### Note:
+Various training modalities are also employed to generate excess data for the publication. Batch training, sequential training and group trainings are also performend. The codes for those training modalities are not included in this repository as they are widely available over the web.
 
+### Citation:
+A. Ghosh, S. Shaikh, P. S. V. Sun, C. Libedinsky, R. So, N. Lin, Z. Wang, A. Basu, "Low-complexity Reinforcement Learning Decoders for Autonomous, Scalable, Neuromorphic intra-cortical Brain Machine Interfaces," Neuromorphic Computing and Engineering (Under review)
+
+Open an issue or mail me directly in case of any queries or suggestions.
