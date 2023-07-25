@@ -16,7 +16,7 @@ git clone https://github.com/aayushmanghosh/RL-Algorithms-for-iBMI-Applications
 cd RL-Algorithms-for-iBMI-Applications
 ```
 This code is stable using Python 3.9.4, Tensorflow 2.13.0
-To install all the dependencies using pip:
+- To install all the dependencies using pip:
 ```bash
 pip install -r requirements.txt
 ```
