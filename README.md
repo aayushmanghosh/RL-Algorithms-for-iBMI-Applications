@@ -36,6 +36,6 @@ pip install -r requirements.txt
 Various training modalities are also employed to generate excess data for the publication. Batch training, sequential training and group trainings are also performend. The codes for those training modalities are not included in this repository as they are widely available over the web.
 
 ### Citation:
-A. Ghosh, S. Shaikh, P. S. V. Sun, C. Libedinsky, R. So, N. Lin, Z. Wang, A. Basu, "Low-complexity Reinforcement Learning Decoders for Autonomous, Scalable, Neuromorphic intra-cortical Brain Machine Interfaces," Neuromorphic Computing and Engineering (Under review)
+A. Ghosh, S. Shaikh, P. S. V. Sun, C. Libedinsky, R. So, N. Lin, H. Chen, Z. Wang, A. Basu, "Low-complexity Reinforcement Learning Decoders for Autonomous, Scalable, Neuromorphic intra-cortical Brain Machine Interfaces," IEEE Transaction on Neural Networks and Learning Systems (Under review)
 
 Open an issue or mail me directly in case of any queries or suggestions.
