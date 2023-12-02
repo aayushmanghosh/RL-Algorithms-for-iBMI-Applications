@@ -8,6 +8,7 @@
 
 # Importing the necessary libraries and modules.
 import warnings
+import time
 warnings.filterwarnings('ignore')
 import numpy as np
 from scipy.io import loadmat
@@ -33,17 +34,28 @@ from lightgbm import LGBMRegressor
 from sklearn.multioutput import MultiOutputRegressor
 import scipy.special as sp
 import FileBrowser
+import argparse
 
+parser = argparse.ArgumentParser()
 scaler = StandardScaler()
+
+# Adding arguments
+parser.add_argument('dir', type = str, help = "directory of dataset")
+parser.add_argument('expt', type = str, help = "name of the particular experiment")
+parser.add_argument('--spars', type = int, default = 0, type = "Sparsity Rate")
+parser.add_argument('--error', type = int, default = 0, help = "Error Rate")
+parser.add_argument('--gamma', type = int, default = 0.0001, help = "Gamma value")
+
+args = parser.parse_args()
 
 # Defining the Global Variables --> Directory, error and sparsity error.
 absolute_path = os.path.dirname(os.path.abspath('__file__'))
-relative_path = r'\datasets\derived-RL-expt' 
-expt = r'monkey_1_set_1' # subject to change depending on the experiment you are trying to execute
+relative_path = args.dir 
+expt = args.expt # subject to change depending on the experiment you are trying to execute
 directory = os.path.join(absolute_path,os.path.join(relative_path, expt))
 files = FileBrowser.uigetfile() 
-error = 0             # Defining the error in Feedback
-sparsity_rate = 0     # Sparsity in the Feedback signals
+error = args.error             # Defining the error in Feedback
+sparsity_rate = args.spars     # Sparsity in the Feedback signals
 
 # Defining the sigmoid function.
 def sigmoid(x):
@@ -373,7 +385,7 @@ interval = []
 '''
 Defining the Exploration constant 
 '''
-gamma = 0.0001 
+gamma = args.gamma
 
 for file in files:
     data = loadmat(os.path.join(directory,file))
